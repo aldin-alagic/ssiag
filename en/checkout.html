@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META - SEO
+            ============== -->
+    <title>Icebein | Checkout</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+
+    <!-- FAVICON
+            ============ -->
+    <link rel="icon" type="image/png" href="../dist/media/favicon.png" />
+
+    <!-- OG
+            ======= -->
+    <meta property="og:title§" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- Image URL -->
+    <meta property="og:url" content="" />
+    <!-- Site URL -->
+
+    <!-- STYLE
+            ========== -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header class="shadow-lg">
+      <div class="bg-green-primary">
+        <div
+          class="container mx-auto px-2 py-2 md:py-3 flex justify-center lg:justify-end items-center"
+        >
+          <ul class="flex ">
+            <li id="logout-btn" class="hidden">
+              <a
+                class="text-white text-md md:text-lg font-light hover:text-orange-primary mr-8"
+                href="./home"
+              >
+                Logout
+              </a>
+            </li>
+            <li id="login-btn" class="hidden">
+              <a
+                class="text-white text-md md:text-lg font-light hover:text-orange-primary mr-8"
+                href="./login"
+              >
+                Login
+              </a>
+            </li>
+            <li id="register-btn" class="hidden">
+              <a
+                class="text-white text-md md:text-lg font-light hover:text-orange-primary mr-8"
+                href="./registration"
+              >
+                Register
+              </a>
+            </li>
+            <li id="logged-user" class="hidden mr-8">
+              <i
+                class="fa fa-user fa-lg mr-2 text-orange-primary"
+                aria-hidden="true"
+              ></i>
+              <span
+                id="logged-user-name"
+                class="text-white text-sm md:text-lg font-bold"
+              />
+            </li>
+            <li>
+              <fieldset id="select-language">
+                <div class="toggle">
+                  <input
+                    type="radio"
+                    name="language"
+                    value="deutsch"
+                    id="language-deutsch"
+                  />
+                  <label class="text-md md:text-lg" for="language-deutsch">
+                    Deutsch
+                  </label>
+                  <input
+                    type="radio"
+                    name="language"
+                    value="english"
+                    id="language-english"
+                    checked="checked"
+                  />
+                  <label class="text-md md:text-lg" for="language-english">
+                    English
+                  </label>
+                </div>
+              </fieldset>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-10 py-2 lg:py-8 lg:flex lg:justify-between items-center navigation-menu"
+      >
+        <div class="text-center lg:w-1/5">
+          <a href="./home">
+            <img class="mx-auto" src="../dist/media/logo.png" alt="" />
+          </a>
+        </div>
+
+        <div class="lg:w-4/5">
+          <nav
+            class="mt-5 lg:mt-0 menu flex items-center justify-center lg:justify-end"
+          >
+            <a class="menu-item md:mr-10 text-center" href="./home"
+              >All Products</a
+            >
+            <a class="menu-item md:mr-16 text-center" id="cart-menu-item">
+              Cart <span class="font-bold" id="cart-quantity" />
+            </a>
+            <a
+              class="menu-item back-to-site text-center mt-3 lg:mt-0"
+              href="https://icebein.ch/"
+              >Back to Icebein site</a
+            >
+          </nav>
+
+          <div class="mobile-menu-toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container lg:flex mt-20 mx-auto">
+      <div class="w-full lg:w-2/3 bg-gray-light p-10">
+        <form
+          id="payment-form"
+          class="w-full"
+          method="POST"
+          action="../../api/checkout.php"
+          target="./home"
+        >
+          <label class="text-md text-black-200 font-semibold block">
+            Full Name<span style="color:red;"> *</span>
+          </label>
+          <input
+            id="full-name"
+            name="full-name"
+            type="text"
+            value=""
+            required
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+          />
+
+          <label
+            for="email"
+            class="text-md text-black-200 font-semibold mt-6 block"
+          >
+            E-Mail<span style="color:red;"> *</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+          />
+
+          <label
+            for="address"
+            class="text-md text-black-200 font-semibold mt-6 block"
+          >
+            Street Address<span style="color:red;"> *</span>
+          </label>
+          <input
+            id="address"
+            name="address"
+            type="text"
+            value=""
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+          />
+
+          <label
+            for="city"
+            class="text-md text-black-200 font-semibold mt-6 block"
+          >
+            City<span style="color:red;"> *</span>
+          </label>
+          <input
+            id="city"
+            name="city"
+            type="text"
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            required
+          />
+
+          <label
+            for="postcode"
+            class="text-md text-black-200 font-semibold mt-6 block"
+          >
+            ZIP code<span style="color:red;"> *</span>
+          </label>
+          <input
+            id="postcode"
+            name="postcode"
+            type="number"
+            value=""
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            required
+          />
+
+          <label
+            for="country"
+            class="text-md text-black-200 font-semibold mt-6 block"
+          >
+            Country<span style="color:red;"> *</span>
+          </label>
+          <input
+            id="country"
+            name="country"
+            type="text"
+            value="Schweiz"
+            readonly
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+          />
+
+          <label
+            for="phone-number"
+            class="text-md text-black-200 font-semibold mt-6 block"
+          >
+            Phone number<span style="color:red;"> *</span></label
+          >
+          <input
+            id="phone-number"
+            name="phone-number"
+            type="text"
+            value=""
+            class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            required
+          />
+
+          <div class="cb-another-address flex items-center mt-6">
+            <input
+              type="checkbox"
+              value=""
+              id="cb-ship"
+              name="different-delivery-address"
+            />
+            <label
+              class="text-md text-black-200 font-semibold block ml-3 cursor-pointer"
+              for="cb-ship"
+            >
+              Ship to another address
+            </label>
+          </div>
+
+          <!-- Another Address Form  -->
+          <div class="another-address-content">
+            <label
+              for="delivery-full-name"
+              class="text-md text-black-200 font-semibold mt-6 block"
+            >
+              Full name<span style="color:red;"> *</span>
+            </label>
+            <input
+              id="delivery-full-name"
+              name="delivery-full-name"
+              type="text"
+              value=""
+              class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            />
+
+            <label
+              for="delivery-address"
+              class="text-md text-black-200 font-semibold mt-6 block"
+            >
+              Street address<span style="color:red;"> *</span>
+            </label>
+            <input
+              id="delivery-address"
+              name="delivery-address"
+              type="text"
+              value=""
+              class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            />
+
+            <label
+              for="delivery-city"
+              class="text-md text-black-200 font-semibold mt-6 block"
+            >
+              City<span style="color:red;"> *</span>
+            </label>
+            <input
+              id="delivery-city"
+              name="delivery-city"
+              type="text"
+              value=""
+              class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            />
+
+            <label
+              for="delivery-postcode"
+              class="text-md text-black-200 font-semibold mt-6 block"
+            >
+              ZIP code<span style="color:red;"> *</span>
+            </label>
+            <input
+              id="delivery-postcode"
+              name="delivery-postcode"
+              type="number"
+              value=""
+              class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            />
+
+            <label
+              for="delivery-country"
+              class="text-md text-black-200 font-semibold mt-6 block"
+            >
+              Country<span style="color:red;"> *</span>
+            </label>
+            <input
+              id="delivery-country"
+              name="delivery-country"
+              type="text"
+              readonly
+              value="Schweiz"
+              class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            />
+
+            <label
+              for="delivery-phone-number"
+              class="text-md text-black-200 font-semibold mt-6 block"
+            >
+              Phone number<span style="color:red;"> *</span>
+            </label>
+            <input
+              id="delivery-phone-number"
+              name="delivery-phone-number"
+              type="text"
+              value=""
+              class="w-full mt-1 block appearance-none border border-gray-border py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-green-primary"
+            />
+          </div>
+
+          <input
+            type="radio"
+            id="payment-now"
+            name="payment-option"
+            value="now"
+            class="hidden"
+            required
+            checked
+          />
+
+          <p
+            id="payment-response"
+            class="text-red-500 text-md font-semibold hidden mt-4 mb-4"
+          >
+            Entered data appears to be wrong. Please try again.
+          </p>
+          <p
+            id="payment-response-success"
+            class="text-green-primary text-md font-semibold hidden mt-4 mb-4"
+          >
+            Entered data appears to be valid.
+          </p>
+
+          <input
+            type="submit"
+            value="GO TO PAYMENT"
+            class="cursor-pointer mt-8 mb-5 font-oswald text-2xl bg-green-primary text-white w-full block py-3 hover:bg-orange-primary px-10"
+          />
+        </form>
+
+        <a
+          id="payment-btn"
+          href=""
+          class="hidden cursor-pointer text-center mt-8 mb-5 font-oswald text-2xl bg-green-primary text-white w-full block py-3 hover:bg-orange-primary px-10"
+        >
+          PAYMENT
+        </a>
+
+        <div id="loader" class="load text-center hidden mt-8">
+          <div class="flex justify-center square-holder mb-2 mr-24">
+            <div class="square bg-green-primary"></div>
+          </div>
+          <p>Loading</p>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY 
+                ================== -->
+      <div class="lg:w-1/3 pl-10 order-summary">
+        <div
+          id="order-summary-items"
+          class="items-center product-list mt-5"
+        ></div>
+        <div class="mt-5 border-t border-t-1 border-gray-border">
+          <h2 class="text-2xl text-black-200 font-bold mt-6 block">
+            TOTAL AMOUNT: <span id="total-value">0</span> CHF
+          </h2>
+        </div>
+      </div>
+      <!--end .right -->
+    </div>
+
+    <footer class="footer  bg-green-primary mt-20">
+      <div class="container sm:flex text-center justify-between mx-auto p-6">
+        <p class="text-white text-lg font-light">
+          All rights reserved - SSI AG Shop Switzerland 2020.
+        </p>
+        <ul class="mt-5 sm:mt-0">
+          <li>
+            <a
+              class="text-white text-lg font-light hover:text-orange-primary"
+              href="https://icebein.ch/terms-and-conditions/"
+              >Terms and Conditions</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- CHECKOUT POPUP -->
+    <div class="cart-popup" id="cart-popup-box">
+      <div class="close-popup" id="close-popup">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+        <svg
+          version="1.1"
+          id="Capa_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512.001 512.001"
+          style="enable-background:new 0 0 512.001 512.001;"
+          xml:space="preserve"
+        >
+          <g>
+            <path
+              d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <p class="text-sm text-black-200">
+        ITEMS IN CART: <span id="cart-title"></span>
+      </p>
+      <div id="cart-item-list" class="items-center product-list mt-5"></div>
+    </div>
+  </body>
+
+  <!-- JAVASCRIPT 
+    =============== -->
+  <script src="../dist/js/main.js"></script>
+  <script src="../dist/js/checkout.js"></script>
+  <script src="../dist/js/checkout_logged.js"></script>
+</html>

@@ -1,0 +1,392 @@
+@import "~tailwindcss/base.css";
+@import "~tailwindcss/components.css";
+@import "~tailwindcss/utilities.css";
+@import "~slick-carousel/slick/slick.css";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-oswald {
+  font-family: "Oswald", sans-serif;
+}
+
+.custom-title-line::before {
+  left: 0;
+  content: "";
+  height: 6px;
+  width: 60px;
+  top: -10px;
+  position: absolute;
+  background-color: #00a49c;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* CUSTOM POPUP 
+  ================= */
+.cart-popup {
+  display: none;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1000;
+
+  @apply p-10 shadow-md;
+
+  @media screen and (max-width: 550px) {
+    width: 100% !important;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 100px;
+    }
+  }
+
+  .close-popup {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    svg {
+      width: 20px;
+      cursor: pointer;
+
+      &:hover {
+        fill: #fc844f;
+      }
+    }
+  }
+
+  .remove-product {
+    position: absolute;
+    right: 50px;
+    background: white;
+
+    svg {
+      width: 10px;
+      cursor: pointer;
+
+      &:hover {
+        fill: #fc844f;
+      }
+    }
+  }
+}
+
+.order-summary {
+  position: relative;
+
+  img {
+    height: 100px;
+  }
+
+  .content {
+    width: 100%;
+    padding-right: 40px;
+  }
+
+  .remove-product {
+    width: 10px;
+    position: absolute;
+    right: 15px;
+    background: white;
+
+    svg {
+      width: 10px;
+      cursor: pointer;
+
+      &:hover {
+        fill: #fc844f;
+      }
+    }
+  }
+}
+
+/* NAVIGATION MENU 
+  ==================== */
+.navigation-menu {
+  @media screen and (max-width: 1100px) {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+
+    .menu-item {
+      color: #333333;
+      font-size: 20px;
+      cursor: pointer;
+      font-family: "Lato";
+
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+        width: 50%;
+      }
+
+      &:hover {
+        color: #fc844f;
+      }
+
+      &.back-to-site {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 30px;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        background-color: #fc844f;
+
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
+          padding: 3px;
+          width: 100%;
+        }
+
+        &:hover {
+          animation-name: pulse;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+}
+
+/* SLICK SLIDER 
+  ================= */
+.slick-next,
+.slick-prev {
+  color: transparent;
+  position: absolute;
+  z-index: 99999;
+  width: 30px;
+  top: 50px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-prev {
+  left: 15px;
+}
+
+.slick-next {
+  right: 15px;
+}
+
+.slick-prev:before {
+  content: "<";
+  color: #00a49c;
+  font-size: 50px;
+}
+
+.slick-next:before {
+  content: ">";
+  color: #00a49c;
+  font-size: 50px;
+}
+
+/* LOGIN/REGISTER
+  =================== */
+// .login-page {
+//     height: calc(100vh - 309px);
+// }
+
+.login-register {
+  input {
+    border-color: gray;
+    background-color: white !important;
+  }
+
+  input:-internal-autofill-selected {
+    background-color: white !important;
+  }
+}
+
+.another-address-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.square {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.load .square {
+  animation: loading 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+// START: Language Picker
+// ======================
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
+/* VARS */
+$open-sans: "Open Sans", "Helvetica", sans-serif;
+
+$darkNavy: #213140;
+$teal1: #66b3fb;
+$teal2: #4b9dea;
+$charcoal: #555555;
+$gold: #b6985a;
+
+$activeShadow: 0 0 10px rgba($teal1, 0.5);
+
+/* MIXINS */
+@mixin focusOutline {
+  outline: dotted 1px #ccc;
+  outline-offset: 0.45rem;
+}
+@mixin hideInput {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+@mixin breakpoint($point) {
+  @if $point == 1100 {
+    @media (max-width: 1100px) {
+      @content;
+    }
+  } @else if $point == 800 {
+    @media (max-width: 800px) {
+      @content;
+    }
+  }
+}
+
+fieldset {
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  min-width: 0;
+  legend {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    width: 100%;
+    float: left;
+    display: table;
+    font-size: 1.5rem;
+    line-height: 140%;
+    font-weight: 600;
+    color: #333;
+    + * {
+      clear: both;
+    }
+  }
+}
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+/* TOGGLE STYLING */
+.toggle {
+  box-sizing: border-box;
+  font-size: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  input {
+    @include hideInput;
+  }
+  input + label {
+    margin: 0;
+    padding: 0.05rem 1rem;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    border: solid 1px #ddd;
+    background-color: #fff;
+    line-height: 140%;
+    text-align: center;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    transition: border-color 0.15s ease-out, color 0.25s ease-out,
+      background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+
+    &:first-of-type {
+      border-radius: 6px 0 0 6px;
+      border-right: none;
+    }
+    &:last-of-type {
+      border-radius: 0 6px 6px 0;
+      border-left: none;
+    }
+  }
+  input:hover + label {
+    border-color: #fc844f;
+    color: #fc844f;
+    cursor: pointer;
+  }
+  input:checked + label {
+    background-color: #fc844f;
+    color: #fff;
+    box-shadow: $activeShadow;
+    border-color: #fc844f;
+    z-index: 1;
+  }
+
+  @include breakpoint(800) {
+    input + label {
+      padding: 0.1rem 0.5rem;
+      flex: 0 0 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+  }
+}
+// ======================
+/*END: Language Picker*/
+
+@keyframes loading {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(110px, 0) rotate(360deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}

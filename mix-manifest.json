@@ -1,0 +1,9 @@
+{
+    "/dist/js/auth.js": "/dist/js/auth.js",
+    "/dist/js/checkout.js": "/dist/js/checkout.js",
+    "/dist/js/checkout_logged.js": "/dist/js/checkout_logged.js",
+    "/dist/js/main.js": "/dist/js/main.js",
+    "/dist/css/main.css": "/dist/css/main.css",
+    "/dist/js/password_reset.js": "/dist/js/password_reset.js",
+    "/dist/js/product.js": "/dist/js/product.js"
+}

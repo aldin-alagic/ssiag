@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META - SEO
+            ============== -->
+    <title>Icebein | Registration</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+
+    <!-- FAVICON
+            ============ -->
+    <link rel="icon" type="image/png" href="../dist/media/favicon.png" />
+
+    <!-- OG
+            ======= -->
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- Image URL -->
+    <meta property="og:url" content="" />
+    <!-- Site URL -->
+
+    <!-- STYLE
+            ========== -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header class="shadow-lg">
+      <div class="bg-green-primary">
+        <div
+          class="container mx-auto px-2 py-2 md:py-3 flex justify-center lg:justify-end items-center"
+        >
+          <ul class="flex ">
+            <li id="logout-btn" class="hidden">
+              <a
+                class="text-white text-md md:text-lg font-light hover:text-orange-primary mr-8"
+                href="./home"
+              >
+                Logout
+              </a>
+            </li>
+            <li id="login-btn" class="hidden">
+              <a
+                class="text-white text-md md:text-lg font-light hover:text-orange-primary mr-8"
+                href="./login"
+              >
+                Login
+              </a>
+            </li>
+            <li id="register-btn" class="hidden">
+              <a
+                class="text-white text-md md:text-lg font-light hover:text-orange-primary mr-8"
+                href="./registration"
+              >
+                Register
+              </a>
+            </li>
+            <li id="logged-user" class="hidden mr-8">
+              <i
+                class="fa fa-user fa-lg mr-2 text-orange-primary"
+                aria-hidden="true"
+              ></i>
+              <span
+                id="logged-user-name"
+                class="text-white text-sm md:text-lg font-bold"
+              />
+            </li>
+            <li>
+              <fieldset id="select-language">
+                <div class="toggle">
+                  <input
+                    type="radio"
+                    name="language"
+                    value="deutsch"
+                    id="language-deutsch"
+                  />
+                  <label class="text-md md:text-lg" for="language-deutsch">
+                    Deutsch
+                  </label>
+                  <input
+                    type="radio"
+                    name="language"
+                    value="english"
+                    id="language-english"
+                    checked="checked"
+                  />
+                  <label class="text-md md:text-lg" for="language-english">
+                    English
+                  </label>
+                </div>
+              </fieldset>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-10 py-2 lg:py-8 lg:flex lg:justify-between items-center navigation-menu"
+      >
+        <div class="text-center lg:w-1/5">
+          <a href="./home">
+            <img class="mx-auto" src="../dist/media/logo.png" alt="" />
+          </a>
+        </div>
+
+        <div class="lg:w-4/5">
+          <nav
+            class="mt-5 lg:mt-0 menu flex items-center justify-center lg:justify-end"
+          >
+            <a class="menu-item md:mr-10 text-center" href="./home"
+              >All Products</a
+            >
+            <a class="menu-item md:mr-16 text-center" id="cart-menu-item">
+              Cart <span class="font-bold" id="cart-quantity" />
+            </a>
+            <a
+              class="menu-item back-to-site text-center mt-3 lg:mt-0"
+              href="https://icebein.ch/"
+              >Back to Icebein site</a
+            >
+          </nav>
+
+          <div class="mobile-menu-toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="w-full max-w-sm mx-auto mt-20 login-register">
+      <form
+        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-gray-light"
+        id="registration-form"
+        name="registration-form"
+        method="POST"
+        action="../../api/registration.php"
+        target="./login"
+      >
+        <div class="mb-5">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-1"
+            for="full-name"
+          >
+            Full name <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="full-name"
+            name="full-name"
+            type="text"
+            placeholder="Full name"
+            required="required"
+          />
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="email"
+          >
+            E-mail
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            required="required"
+          />
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="password"
+          >
+            Password <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            required="required"
+          />
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="password-confirm"
+          >
+            Confirm password <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="password-confirm"
+            name="password-confirm"
+            type="password"
+            placeholder="Confirm password"
+            required="required"
+          />
+
+          <div class="cb-company flex items-center mt-6">
+            <label
+              class="text-md text-black-200 font-semibold block  cursor-pointer"
+              for="company"
+            >
+              Are you a company?
+            </label>
+            <input
+              type="checkbox"
+              value=""
+              id="cb-company"
+              class="ml-3"
+              name="company"
+            />
+          </div>
+
+          <div class="company-content hidden">
+            <label
+              class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+              for="company-name"
+            >
+              Company <span style="color:red;">*</span>
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="company-name"
+              name="company-name"
+              type="text"
+              placeholder="Company name"
+            />
+          </div>
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="phone-number"
+          >
+            Phone number <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="phone-number"
+            name="phone-number"
+            type="tel"
+            placeholder="Phone number"
+            required="required"
+          />
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="street-address"
+          >
+            Street address <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="street-address"
+            name="street-address"
+            type="text"
+            placeholder="Street address"
+            required="required"
+          />
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="city"
+          >
+            City <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="city"
+            name="city"
+            type="text"
+            placeholder="City"
+            required="required"
+          />
+
+          <label
+            class="block text-gray-700 text-sm font-bold mt-4 mb-1"
+            for="post-code"
+          >
+            ZIP Code <span style="color:red;">*</span>
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="post-code"
+            name="post-code"
+            type="text"
+            placeholder="ZIP Code"
+            required="required"
+          />
+          <input
+            class="hidden"
+            id="language"
+            name="language"
+            type="text"
+            value="eng"
+          />
+        </div>
+
+        <p id="registration-response" class="text-red-500 text-sm hidden mb-4">
+          Incorrect input values. Please try again.
+        </p>
+        <p
+          id="registration-response-success"
+          class="text-green-primary text-sm hidden mb-4"
+        >
+          You have succesfully signed up.
+        </p>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-green-primary hover:bg-orange-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+            name="register-submit"
+          >
+            Sign Up
+          </button>
+        </div>
+        <div id="loader" class="load text-center hidden mt-5">
+          <div class="square-holder mx-24 mb-2">
+            <div class="square bg-green-primary"></div>
+          </div>
+          <p>Loading</p>
+        </div>
+      </form>
+    </div>
+
+    <footer class="footer  bg-green-primary mt-20">
+      <div class="container sm:flex text-center justify-between mx-auto p-6">
+        <p class="text-white text-lg font-light">
+          All rights reserved - SSI AG Shop Switzerland 2020.
+        </p>
+        <ul class="mt-5 sm:mt-0">
+          <li>
+            <a
+              class="text-white text-lg font-light hover:text-orange-primary"
+              href="https://icebein.ch/terms-and-conditions/"
+              >Terms and Conditions</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- CHECKOUT POPUP -->
+    <div class="cart-popup" id="cart-popup-box">
+      <div class="close-popup" id="close-popup">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+        <svg
+          version="1.1"
+          id="Capa_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512.001 512.001"
+          style="enable-background:new 0 0 512.001 512.001;"
+          xml:space="preserve"
+        >
+          <g>
+            <path
+              d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <p class="text-sm text-black-200">
+        PRODUKTE IM KORB: <span id="cart-title"></span>
+      </p>
+      <div id="cart-item-list" class="items-center product-list mt-5"></div>
+    </div>
+  </body>
+
+  <!-- JAVASCRIPT 
+    =============== -->
+  <script src="../dist/js/main.js"></script>
+  <script src="../dist/js/auth.js"></script>
+</html>
