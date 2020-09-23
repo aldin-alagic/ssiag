@@ -1,0 +1,23 @@
+ERR-01 : Sve vrijednosti nisu unešene kod registracije
+ERR-02 : Sve vrijednosti nisu ispravne kod registracije
+ERR-03 : Korisnik postoji (EMAIL postoji)
+ERR-04 : Sve vrijednosti nisu unešene kod prijave
+ERR-05 : Korisnik ne postoji kod prijave
+ERR-06 : Neuspješna prijava, jer lozinka ne postoji
+ERR-07 : Email nije unesen kod resetiranja lozinke
+ERR-08 : Korisnik ne postoji kod resetiranja lozinke
+ERR-09 : Token nije ispravan kod 2. dijela resetiranja lozinke
+ERR-10 : Token za resetiranje lozinke ne postoji
+ERR-11 : Token za resetiranje lozinke istekao
+ERR-12 : Lozinka loša kod 2. dijela resetiranja lozinke
+ERR-13 : Token nije uspješno izbrisan kod 2. dijela resetiranja lozinke
+ERR-14 : Jezik nije dobro postavljen kod resetiranja lozinke
+ERR-15 : Jezik nije dobro postavljen kod registracije
+ERR-16 : Nisu uneseni svi podaci kod checkouta
+ERR-17 : Nepostojeći proizvod
+
+OK-01 : Korisnik registriran
+OK-02 : Korisnik prijavljen
+OK-04 : Token je dobar, lozinka resetirana
+OK-05 : Dobar checkout, payment link generiran
+OK-06 : Dobar checkout, invoice poslan
