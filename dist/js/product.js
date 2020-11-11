@@ -99,22 +99,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function ($) {
-  $("#select-size").change(function () {
-    var selectedSize = $("#select-size").val();
-    $("#select-length").empty();
-
-    if (selectedSize == "1") {
-      $("#select-length").append(new Option("N (Normal)", "N", null, true));
-    } else {
-      $("#select-length").append(new Option("N (Normal)", "N", null, true));
-      $("#select-length").append(new Option("L (Large)", "L"));
-    }
-  });
+$(document).ready(function ($) {
   var id = $("#id").text().trim();
   var name = $("#name").text().trim();
   var image = $("#image").text().trim();
-  var price = $("#price").text().trim(); // ADD ITEM TO CART
+  var price = $("#price").text().trim();
+  getProductStock(id);
+  $("#select-size").change(function (event) {
+    getProductStock(id);
+  });
+  $("#select-length").change(function (event) {
+    getProductStock(id);
+  });
+  $("#input-quantity").change(function (event) {
+    getProductStock(id);
+  }); // ADD ITEM TO CART
 
   var productForm = "#product-form";
   $(productForm).submit(function () {
@@ -139,6 +138,39 @@ function addItemCart(item) {
   var cart = JSON.parse(sessionStorage.getItem("cart"));
   cart["products"].push(item);
   sessionStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function getProductStock(id) {
+  var quantity = parseInt($("#input-quantity").val());
+  var selectedSize = $("#select-size").val(); //1,2,3
+
+  var selectedLength = $("#select-length").val(); // N, L
+
+  var sizeLength = selectedLength + selectedSize;
+  var stock = -5;
+  $.ajax({
+    url: "https://ssiag.com/api/product.php",
+    data: {
+      product_id: id,
+      size_length: sizeLength
+    },
+    dataType: "json",
+    type: "post",
+    success: function success(response) {
+      $("#stock").text(response.data);
+    },
+    error: function error(e) {
+      alert(JSON.stringify(e));
+    }
+  });
+
+  if (stock < quantity || quantity <= 0) {
+    $("#add-btn").attr("disabled", true);
+    $("#add-btn").hide();
+  } else {
+    $("#add-btn").attr("disabled", false);
+    $("#add-btn").show();
+  }
 }
 
 /***/ }),
@@ -11034,7 +11066,7 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Front\_assets\js\product.js */"./_assets/js/product.js");
+module.exports = __webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Git\_assets\js\product.js */"./_assets/js/product.js");
 
 
 /***/ })
