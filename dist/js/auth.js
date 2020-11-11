@@ -11088,7 +11088,7 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Front\_assets\js\auth.js */"./_assets/js/auth.js");
+module.exports = __webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Git\_assets\js\auth.js */"./_assets/js/auth.js");
 
 
 /***/ })

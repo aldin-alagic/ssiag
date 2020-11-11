@@ -14251,8 +14251,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Front\_assets\js\main.js */"./_assets/js/main.js");
-module.exports = __webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Front\_assets\sass\main.scss */"./_assets/sass/main.scss");
+__webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Git\_assets\js\main.js */"./_assets/js/main.js");
+module.exports = __webpack_require__(/*! C:\Users\Ind3Z\Desktop\TWIS NET\Git\_assets\sass\main.scss */"./_assets/sass/main.scss");
 
 
 /***/ })
