@@ -15,9 +15,12 @@ ERR-14 : Jezik nije dobro postavljen kod resetiranja lozinke
 ERR-15 : Jezik nije dobro postavljen kod registracije
 ERR-16 : Nisu uneseni svi podaci kod checkouta
 ERR-17 : Nepostojeći proizvod
+ERR-18 : Nisu unesene sve vrijednosti kod stanja proizvoda
+
 
 OK-01 : Korisnik registriran
 OK-02 : Korisnik prijavljen
 OK-04 : Token je dobar, lozinka resetirana
 OK-05 : Dobar checkout, payment link generiran
 OK-06 : Dobar checkout, invoice poslan
+OK-07 : Dobar stock
