@@ -277,11 +277,10 @@ class Mail
                               <div class="f-fallback">
                                 <h1>Willkommen, ' . $user["name"] . '!</h1>
                                 <p>
-                                  Thank you for singing up with <strong>icebein.ch</strong>. We are thrilled to
-                                  have you on board.
+                                  Vielen Dank für Ihre Anmeldung und herzlich willkommen bei Icebein.
                                 </p>
                                 <!-- Action -->
-                                <p>For reference, here is your login information:</p>
+                                <p>Mit folgenden Daten können Sie sich jederzeit einloggen:</p>
                                 <table
                                   class="attributes"
                                   width="100%"
@@ -300,14 +299,14 @@ class Mail
                                         <tr>
                                           <td class="attributes_item">
                                             <span class="f-fallback">
-                                              <strong>Login Page: </strong>https://ssiag.com/icebein/login.html
+                                              <strong>Login: </strong>https://ssiag.com/icebein/login.html
                                             </span>
                                           </td>
                                         </tr>
                                         <tr>
                                           <td class="attributes_item">
                                             <span class="f-fallback">
-                                              <strong>E-mail: </strong>' . $user["email"] . '
+                                              <strong>Benutzername: </strong>' . $user["email"] . '
                                             </span>
                                           </td>
                                         </tr>
@@ -316,7 +315,7 @@ class Mail
                                   </tr>
                                 </table>
                                 <p>
-                                  Thanks, <br>The Icebein Team</br>
+                                  Freundliche Grüsse, <br>The Icebein Team</br>
                                 </p>
                               </div>
                             </td>
@@ -477,8 +476,8 @@ class Mail
                               <tr>
                                 <td class="content-cell">
                                   <div class="f-fallback">
-                                    <h1>Lieber ' . $user['name'] . ',</h1>
-                                    <p>You recently requested to reset the password for your <strong>icebein.ch</strong> account. Use the button below to reset it. <strong>This password reset is only valid for the next 3 hours.</strong></p>
+                                    <h1>Geehrter ' . $user['name'] . ',</h1>
+                                    <p>Sie haben vor Kurzem die Zurücksetzung des Passworts von Ihrem icebein.ch Konto angefordert. <strong>Die Möglichkeit Ihren Passwort zurückzusetzen endet drei Stunden nach Erhalt dieser Mail.</strong></p>
                                     <!-- Action -->
                                     <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                                       <tr>
@@ -495,15 +494,16 @@ class Mail
                                         </td>
                                       </tr>
                                     </table>
-                                    <p>In case that you did not request a password reset, please ignore this email and your password will not be reset.</p>
-                                    <p>Thanks,
+                                    <p>Passwort zurücksetzen
+Sollten Sie Passwortzurücksetzung nicht angefordert haben, können Sie diese Mitteilung ignorieren.</p>
+                                    <p>Freundliche Grüsse,
                                       <br>The Icebein Team</br>
                                     </p>
                                     <!-- Sub copy -->
                                     <table class="body-sub" role="presentation">
                                       <tr>
                                         <td>
-                                          <p class="f-fallback sub">If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
+                                          <p class="f-fallback sub">Sollten irgendwelche Schwierigkeiten auftreten, verwenden Sie bitte den untenstehenden Link.</p>
                                           <p class="f-fallback sub">https://www.ssiag.com/icebein/password-reset?key=' . $token . '</p>
                                         </td>
                                       </tr>
